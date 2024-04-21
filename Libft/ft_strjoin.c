@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:29:36 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/21 12:47:15 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:08:26 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,29 @@
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
+    unsigned int i;
+    unsigned int j;
+    char *str;
+
+    i = 0;
+    str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+    if (!str)
+        return (NULL);
+    while(s1[i] != '\0')
+    {
+        str[i] = s1[i];
+        i++;
+    } 
+    j = 0;   
+    while(s2[j] != '\0')
+    {
+        str[i + j] = s2[j];
+        j++;
+    }
+    str[i + j] = '\0';
+    return (str);   
+}
 
     
