@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 21:57:54 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/14 14:48:23 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:16:53 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,16 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
+    unsigned int i;
+
+    i = 0;
+    if(size == 0)
+        return(ft_strlen(src));
+    while(src[i] != '\0' && i < size -1)
+    {
+        dst[i] = src[i];
+        i++;
+    }        
+    dst[i] = '\0';
+    return(ft_strlen(src));    
+}
