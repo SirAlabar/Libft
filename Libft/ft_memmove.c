@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:04:16 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/14 12:28:27 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:57:18 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,28 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+    unsigned int i;
+
+    if(!dst && !src)
+        return (0);
+    i = 0;
+    if((size_t)dst - (size_t)src < len)
+    {
+        i = len - 1;
+        while(i < len)
+        {
+            ((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+            i--;
+        }
+    }
+    else
+    {
+        while(i < len)
+        {
+            ((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+            i++;
+        }
+        
+    }
+    return (dst); 
+}
