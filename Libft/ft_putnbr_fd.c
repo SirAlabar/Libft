@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:33:52 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/14 17:01:04 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:48:57 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 void	ft_putnbr_fd(int nb, int fd)
 {
-	unsigned int nbr;
+	unsigned int	nbr;
 
 	if (nb < 0)
 	{

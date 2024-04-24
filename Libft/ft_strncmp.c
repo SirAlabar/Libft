@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:46:01 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/15 21:02:03 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:39:06 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	if (n == 0)
 		return (0);

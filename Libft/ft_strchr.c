@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:32:40 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/15 21:37:42 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:41:54 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i] && s[i] != (char)c)

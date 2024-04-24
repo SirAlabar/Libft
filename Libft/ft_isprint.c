@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 21:54:17 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/15 19:11:42 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:35:45 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c >= 32 && c <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

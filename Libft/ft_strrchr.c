@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 13:43:26 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/15 20:47:04 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:38:41 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned i;
-	char *last;
+	unsigned int	i;
+	char			*last;
 
 	i = 0;
 	last = NULL;

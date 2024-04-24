@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:33:02 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/15 19:23:37 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:36:05 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-    if(s)
-    {
-        write(fd, s, ft_strlen(s));
-    }
+	if (s)
+	{
+		write(fd, s, ft_strlen(s));
+	}
 }

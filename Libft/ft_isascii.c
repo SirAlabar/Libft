@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 11:55:38 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/15 19:09:59 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:35:42 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-        return(1);
-    return(0);    
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 20:22:22 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/14 17:27:40 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:45:19 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
-{	
-    int	i;
+int	ft_atoi(const char *str)
+{
+	int	i;
 	int	sing;
 	int	res;
 
