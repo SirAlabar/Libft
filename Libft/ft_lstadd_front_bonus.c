@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:49:43 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/14 12:00:18 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/26 20:22:57 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+    new->next = *lst;
+    *lst = new;    
+}
+
+
