@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:30:43 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/24 20:52:25 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:24:59 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 #include "libft.h"
 
-ft_countwords(char const *s, char c)
+static int ft_countwords(char const *s, char c)
 {
 	unsigned int	count;
 	unsigned int	flag;
@@ -31,6 +31,7 @@ ft_countwords(char const *s, char c)
 
 	i = 0;
 	flag = 0;
+	count = 0;
 	while (s[i] == c)
 		i++;
 	while (s[i])
@@ -49,10 +50,56 @@ ft_countwords(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c);
+static char **ft_free(char **strs)
+{
+	unsigned int i;
+	
+	if(!strs)
+		return NULL;
+	i = 0;	
+	while (strs[i])
+	{
+		free(strs[i]);
+		strs[i] = NULL;
+		i++;
+	}
+	free(strs);
+	return (NULL);	
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char **res;
-
-	if (!(res = (char *)malloc(ft_coundwords(*s) + 1)))
-		return (0);
+	unsigned int i;
+	size_t word;
+	
+	if (!s)
+		return (NULL);
+	res = (char **)malloc((ft_countwords(s, c) + 1) * sizeof(char *));
+	if (!res)
+		return (NULL);
+	i = 0;
+	while(*s)
+	{
+		while(*s == c && *s)
+			s++;
+		if(*s)
+		{
+			if(!ft_strchr(s, c))
+				word = ft_strlen(s);
+			else	
+				word = ft_strchr(s, c) - s;
+								
+			res[i] = ft_substr(s, 0, word);
+			if(!res[i])
+			{
+				ft_free(res);
+				return NULL;
+			}
+			i++;
+			s += word;		
+		}	
+	}	
+	res[i] = NULL;
+	return(res);		
 }
