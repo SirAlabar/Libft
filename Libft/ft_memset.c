@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:04:26 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/24 20:43:47 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/26 21:15:28 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned int	i;
-	unsigned char	*p;
+	unsigned char	*str;
 
-	p = (unsigned char *)b;
+	str = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
-		p[i] = (unsigned char)c;
+		str[i] = (unsigned char)c;
 		i++;
 	}
-	return (b);
+	return (s);
 }
