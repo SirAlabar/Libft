@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:50:41 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/14 11:59:53 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:10:23 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,13 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+    t_list *last;
+
+    if(!(*lst))
+    {
+        *lst = new;
+        return;
+    }
+    last = ft_lstlast(*lst);
+    last->next = new;       
+}
