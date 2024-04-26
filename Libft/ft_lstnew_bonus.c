@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:49:30 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/14 12:02:08 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/26 20:57:07 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,13 @@
 
 t_list	*ft_lstnew(void *content)
 {
+    t_list *lstn;
+    
+    lstn = malloc(sizeof(t_list));
+    if(!lstn)
+        return(NULL);
+    lstn->content = content;
+    lstn->next = NULL;
+
+    return(lstn);
+}
