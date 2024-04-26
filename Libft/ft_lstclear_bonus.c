@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:57:46 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/14 12:00:32 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:27:32 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,17 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+    t_list *tmp;
+
+    if(!lst || !del)
+        return;    
+    while(*lst)
+    {
+        tmp = (*lst)->next;
+        del((*lst)->content);
+        free(*lst);
+        *lst = tmp;        
+    }
+    free(*lst);
+    *lst = NULL;    
+}
