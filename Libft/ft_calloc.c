@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 12:02:56 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/24 20:48:43 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:17:17 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,14 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count == 0 || size == 0)
 	{
-		count = 1;
-		size = 1;
+		return NULL;
 	}
+	if (size > ((size_t)-1)/count)
+		return NULL;
 	tot_size = count * size;
 	str = malloc(tot_size);
 	if (!str)
-		return (0);
+		return NULL;
 	else
 		ft_bzero(str, tot_size);
 	return (str);
