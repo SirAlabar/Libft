@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:31:02 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/24 20:51:31 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:30:35 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 */
 
 #include "libft.h"
-#include <string.h>
-#include <unistd.h>
 
 static int	int_len(long int nbr)
 {
