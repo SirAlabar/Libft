@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:30:43 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/26 22:24:59 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:25:14 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 #include "libft.h"
 
-static int ft_countwords(char const *s, char c)
+static int	ft_countwords(char const *s, char c)
 {
 	unsigned int	count;
 	unsigned int	flag;
@@ -50,13 +50,13 @@ static int ft_countwords(char const *s, char c)
 	return (count);
 }
 
-static char **ft_free(char **strs)
+static char	**ft_free(char **strs)
 {
-	unsigned int i;
-	
-	if(!strs)
-		return NULL;
-	i = 0;	
+	unsigned int	i;
+
+	if (!strs)
+		return (NULL);
+	i = 0;
 	while (strs[i])
 	{
 		free(strs[i]);
@@ -64,42 +64,47 @@ static char **ft_free(char **strs)
 		i++;
 	}
 	free(strs);
-	return (NULL);	
+	return (NULL);
+}
+
+static char	**ft_fill(char const *s, char c, char **res)
+{
+	unsigned int	i;
+	size_t			word;
+
+	i = 0;
+	while (*s)
+	{
+		while (*s == c && *s)
+			s++;
+		if (!*s)
+			break ;
+		if (!ft_strchr(s, c))
+			word = ft_strlen(s);
+		else
+			word = ft_strchr(s, c) - s;
+		res[i] = ft_substr(s, 0, word);
+		if (!res[i])
+		{
+			ft_free(res);
+			return (0);
+		}
+		i++;
+		s += word;
+	}
+	res[i] = '\0';
+	return (res);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char **res;
-	unsigned int i;
-	size_t word;
-	
+	char	**res;
+
 	if (!s)
 		return (NULL);
 	res = (char **)malloc((ft_countwords(s, c) + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
-	i = 0;
-	while(*s)
-	{
-		while(*s == c && *s)
-			s++;
-		if(*s)
-		{
-			if(!ft_strchr(s, c))
-				word = ft_strlen(s);
-			else	
-				word = ft_strchr(s, c) - s;
-								
-			res[i] = ft_substr(s, 0, word);
-			if(!res[i])
-			{
-				ft_free(res);
-				return NULL;
-			}
-			i++;
-			s += word;		
-		}	
-	}	
-	res[i] = NULL;
-	return(res);		
+	res = ft_fill(s, c, res);
+	return (res);
 }
