@@ -6,7 +6,7 @@
 #    By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 20:41:06 by hluiz-ma          #+#    #+#              #
-#    Updated: 2024/04/26 21:45:49 by hluiz-ma         ###   ########.fr        #
+#    Updated: 2024/05/05 15:17:52 by hluiz-ma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,12 +36,12 @@ all: $(NAME)
 $(NAME):	$(OBJS)
 			@ar rcs $(NAME) $(OBJS)
 			@echo "\033[90m[\033[32mSuccess\033[90m]\033[32m Successfully compiled Libft.\033[0m"
+			@echo "\033[0;31m𓄿 𓅓  Made by Alabar 𓄿 𓅓"
 
 bonus:		$(OBJS) $(OBJS_BONUS)
-			ar rcs $(NAME) $^
+			@ar rcs $(NAME) $^
 			@echo "\033[90m[\033[32mSuccess\033[90m]\033[32m Successfully compiled Libft with Bonus.\033[0m"
 
-			@echo "\033[0;31m𓄿 𓅓  Made by Alabar 𓄿 𓅓"
 
 %.o: %.c #SHOW COMPILING
 #$(SRCS):
@@ -50,7 +50,7 @@ bonus:		$(OBJS) $(OBJS_BONUS)
 
 
 clean:
-			@$(RM) $(OBJS)
+			@$(RM) $(OBJS) $(OBJS_BONUS)
 			@echo "\033[90m[\033[91mDeleting\033[90m]\033[31m Object files deleted\033[0m"
 
 fclean:		clean
@@ -62,6 +62,7 @@ re: 		fclean all
 help:
 			@echo ----------------Comand List--------------------
 			@echo make - To compile the Libft.
+			@echo bonus - To compile the Bonus Libft.
 			@echo clean - To remove objects.
 			@echo fclean - To remove objects and Libft.
 			@echo re - To remove objects and Libft and recompile.
