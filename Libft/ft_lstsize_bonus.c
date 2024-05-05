@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:50:00 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/26 20:40:49 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/05/05 15:21:50 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@
 
 #include "libft.h"
 
-int				ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-    t_list *tmp;
-    unsigned int i;
+	t_list			*tmp;
+	unsigned int	i;
 
-    tmp = lst;
-    i = 0;
-    while(tmp)
-    {
-        tmp = tmp->next;
-        i++;
-    }
-    return(i);
+	tmp = lst;
+	i = 0;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
 }
