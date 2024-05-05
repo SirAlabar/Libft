@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:58:36 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/26 22:28:59 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/05/05 14:58:16 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,25 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list *new_lst;
+	t_list	*new_lst;
+	t_list	*new_obj;
+	void	*set;
 
-    if(!lst || !f || !del)
-        return(NULL);
-    new_lst = NULL;    
-    while(lst)
-    {
-        void *new_content =f(lst->content);
-        if(!new_content)
-        {
-            ft_lstclear(&new_lst, del);
-            del(lst->content);
-            return (NULL);
-        }
-        ft_lstadd_back(&new_lst, ft_lstnew(new_content));
-        lst = lst->next;
-    }
-    return (new_lst);     
+	if (!lst || !f || !del)
+		return (NULL);
+	new_lst = NULL;
+	while (lst)
+	{
+		set = f(lst->content);
+		new_obj = ft_lstnew(set);
+		if (!new_obj)
+		{
+			del(set);
+			ft_lstclear(&new_lst, del);
+			return (new_lst);
+		}
+		ft_lstadd_back(&new_lst, new_obj);
+		lst = lst->next;
+	}
+	return (new_lst);
 }
