@@ -6,7 +6,7 @@
 /*   By: hluiz-ma <hluiz-ma@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:50:21 by hluiz-ma          #+#    #+#             */
-/*   Updated: 2024/04/26 20:15:26 by hluiz-ma         ###   ########.fr       */
+/*   Updated: 2024/05/05 15:23:42 by hluiz-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-    t_list *tmp;
-    
-    if(!lst)
-        return(NULL);
-    tmp = lst;
-    while (tmp->next)    
-        tmp = tmp->next;
-    return (tmp);    
+	t_list	*tmp;
+
+	if (!lst)
+		return (NULL);
+	tmp = lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
 }
